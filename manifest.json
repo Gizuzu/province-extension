@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Prov Extend",
+  "description": "Расширения функционала сайтов MTA Province",
+  "version": "0.0.1",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "js/journal/dashboard.js",
+        "js/bootstrap.js"
+      ],
+      "css": [
+        "css/journal/dashboard.css",
+        "css/journal/all.css",
+        "css/bootstrap.css"
+      ],
+      "matches": [
+        "https://journal.province.site/dashboard"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [ "/css/*" ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
